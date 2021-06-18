@@ -5,6 +5,6 @@ const ProductSchema = new mongoose.Schema({
             price: {type: Number},
             description: {type: String}
 }, {timestamps: true});  // initialize object data types and includes timestamps for data time tracking
+    
 
-
-module.exports = mongoose.model('products', ProductSchema);
+module.exports = mongoose.model('Products', ProductSchema);

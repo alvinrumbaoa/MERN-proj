@@ -1,6 +1,6 @@
-const Products = require("../models/products.models");
+const Products = require("../models/product.models");
 
-module.exports.getAllProduct = (req, res) => {
+module.exports.getAllProducts = (req, res) => {
 
     Products.find({})
         .then((allProducts) => {
@@ -14,7 +14,7 @@ module.exports.getAllProduct = (req, res) => {
 
 }
 
-module.exports.createProduct = (req, res) => {
+module.exports.createProducts= (req, res) => {
     console.log("Create Product");
     console.log(req.body);
     Products.create(req.body)
@@ -29,14 +29,14 @@ module.exports.createProduct = (req, res) => {
 
 }
 
-module.exports.getOneProduct = (req, res) => {
+module.exports.getOneProducts = (req, res) => {
 
-    Product.findOne({
+    Products.findOne({
             _id: req.params.id
         })
         .then(oneProduct => {
-            console.log(req, params.id);
-            res.json(req.params.id);
+            console.log(oneProduct);
+            res.json(oneProduct);
         })
         .catch((err) => {
             console.log(err);

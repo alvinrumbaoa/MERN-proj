@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbName = "product_dB";
+const dbName = "product";
 
 mongoose.connect("mongodb://localhost/" + dbName, {
     useNewUrlParser: true,

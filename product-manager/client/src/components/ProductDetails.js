@@ -20,7 +20,7 @@ const ProductDetails = (props) =>{
         <div>
             <h1>Product Details</h1>   
             <p>Title: {products.title}</p>
-            <p>Price: {products.price}</p>
+            <p>Price: ${products.price}</p>
             <p>Description: {products.description}</p>
         </div>
     )
