@@ -9,9 +9,9 @@ module.exports = function(app){
 	// create a param variable called "id"
 	app.get("/api/products/:id", ProductController.getOneProducts);
 	// update movie
-	// app.put("/api/products:id", ProductController.updateProduct);
+	app.put("/api/products/:id", ProductController.updateProducts);
 	// // delete movie
-	// app.delete("/api/products:id", ProductController.deleteProduct);
+	app.delete("/api/products/:id", ProductController.deleteProducts);
 
 
 

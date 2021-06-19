@@ -22,6 +22,13 @@ const ProductDetails = (props) =>{
             <p>Title: {products.title}</p>
             <p>Price: ${products.price}</p>
             <p>Description: {products.description}</p>
+            <Link to={"/products/"}>
+                        <input type="submit" value="Back"/>
+            </Link>
+            <Link to={"/products/" + props.id + "/edit"}>
+                        <input type="submit" value="Edit"/>
+            </Link>
+            
         </div>
     )
 }

@@ -27,11 +27,17 @@ const ProductList = (props) =>{
                         <Link to={"/products/" + item._id}>
                         {item.title}
                         </Link>
+                        <Link to={"/products/" + item._id + "/edit"}>
+                        <input type="submit" value="Edit"/>
+                        </Link>
                     </div>
                 
                 ))
+                
             }
-            {/* create a link to details page */}
+           <Link to={"/products/new"}>
+                        <input type="submit" value="Add"/>
+            </Link>
         </div>
     )
 }

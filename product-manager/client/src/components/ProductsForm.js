@@ -21,7 +21,7 @@ const ProductForm = () =>{
             .catch((err) => {
                 console.log (err)
             });
-    
+        navigate("/products");
     }
     
     return(

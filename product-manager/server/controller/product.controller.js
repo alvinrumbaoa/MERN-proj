@@ -45,3 +45,30 @@ module.exports.getOneProducts = (req, res) => {
 
 
 }
+
+module.exports.updateProducts = (req, res) => {
+
+    Products.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+        .then(updatedProduct => {
+            console.log(updatedProduct);
+            res.json(updatedProduct);
+        })
+        .catch(err => {
+            console.log(err);
+            res.json(err);
+        })
+}
+
+
+module.exports.deleteProducts = (req, res) =>{
+
+    Products.deleteOne({_id: req.params.id})
+        .then(deletedProduct => {
+            console.log(deletedProduct);
+            res.json(deletedProduct);
+        }) 
+        .catch(err => {
+            console.log(err);
+            res.json(err);
+        })
+}
