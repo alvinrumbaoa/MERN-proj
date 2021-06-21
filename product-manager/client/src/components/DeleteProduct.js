@@ -4,15 +4,28 @@ import {Link, navigate} from "@reach/router";
 
 
 const DeleteProduct = (props) =>{    
-    
-    
-    
-    
+        const {id , afterDelete} = props;
+
+        const deleteHandler = (e,id) =>{
+            
+            e.preventDefault();
+            axios.delete("http://localhost:8000/api/products/" + id)
+            
+        .then((res) =>{
+            console.log(res.data);
+            afterDelete();
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+        navigate("/products");
+    }
     return(
         <div>
-            Delete Product
+            <button onClick={(e) => deleteHandler(e,id )}>Remove</button>
         </div>
-
+    
     )
 }
 

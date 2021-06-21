@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from  'react';
 import axios from 'axios';
 import {Link, navigate} from "@reach/router";
+import DeleteProduct from './DeleteProduct';
 
 const ProductList = (props) =>{
     //create some state to hold objects
@@ -14,8 +15,13 @@ const ProductList = (props) =>{
         })
         .catch((err) => {
             console.log(err);
-        });
+        })
     },[]) 
+
+    const afterDelete =() =>{
+        navigate("/products");
+    };
+
     return(
         <div>
             <h1>All Product List</h1> 
@@ -30,12 +36,13 @@ const ProductList = (props) =>{
                         <Link to={"/products/" + item._id + "/edit"}>
                         <input type="submit" value="Edit"/>
                         </Link>
+                        <DeleteProduct  id={item._id } afterDelete= {afterDelete} />
                     </div>
                 
                 ))
                 
             }
-           <Link to={"/products/new"}>
+            <Link to={"/products/new"}>
                         <input type="submit" value="Add"/>
             </Link>
         </div>

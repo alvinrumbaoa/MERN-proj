@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from  'react';
 import axios from 'axios';
 import {Link, navigate} from "@reach/router";
+import DeleteProduct from  "./DeleteProduct";
 
 const ProductDetails = (props) =>{
     const [products, setProduct] = useState({});
@@ -16,6 +17,9 @@ const ProductDetails = (props) =>{
         });
     },[props.id]);
     
+    const afterDelete =() =>{
+        navigate("/products");
+    };
     return(
         <div>
             <h1>Product Details</h1>   
@@ -28,7 +32,7 @@ const ProductDetails = (props) =>{
             <Link to={"/products/" + props.id + "/edit"}>
                         <input type="submit" value="Edit"/>
             </Link>
-            
+            <DeleteProduct  id={props.id } afterDelete= {afterDelete} />
         </div>
     )
 }

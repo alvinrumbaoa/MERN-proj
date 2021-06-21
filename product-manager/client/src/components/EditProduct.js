@@ -50,8 +50,7 @@ const EditProduct = (props) =>{
                 
             </form>
             <Link to={"/products"}>
-                        <input type="submit" value="Back"/>
-                        
+                        <input type="submit" value="Back"/>     
             </Link>
         </div>
     )
