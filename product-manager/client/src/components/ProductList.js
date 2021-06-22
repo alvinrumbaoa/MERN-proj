@@ -18,8 +18,13 @@ const ProductList = (props) =>{
         })
     },[]) 
 
-    const afterDelete =() =>{
-        navigate("/products");
+    const afterDelete =(deletedID) =>{
+        let  filterStateArray = products.filter((products) =>{
+
+            return products._id != deletedID;
+        });
+        setProduct(filterStateArray);
+        
     };
 
     return(
@@ -36,7 +41,7 @@ const ProductList = (props) =>{
                         <Link to={"/products/" + item._id + "/edit"}>
                         <input type="submit" value="Edit"/>
                         </Link>
-                        <DeleteProduct  id={item._id } afterDelete= {afterDelete} />
+                        <DeleteProduct  id={item._id} afterDelete= {afterDelete} />
                     </div>
                 
                 ))

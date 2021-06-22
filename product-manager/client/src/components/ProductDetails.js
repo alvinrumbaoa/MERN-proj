@@ -18,7 +18,7 @@ const ProductDetails = (props) =>{
     },[props.id]);
     
     const afterDelete =() =>{
-        navigate("/products");
+        navigate("/products/");
     };
     return(
         <div>

@@ -13,13 +13,12 @@ const DeleteProduct = (props) =>{
             
         .then((res) =>{
             console.log(res.data);
-            afterDelete();
+            afterDelete(id);
+            navigate("/products");
         })
         .catch((err) => {
             console.log(err);
-        });
-
-        navigate("/products");
+        });   
     }
     return(
         <div>
