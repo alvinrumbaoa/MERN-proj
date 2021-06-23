@@ -36,10 +36,10 @@ const ProductList = (props) =>{
                 products.map((item, index) => (
                     <div key={index}>
                         <Link to={"/products/" + item._id}>
-                        {item.title}
+                        {item.titgitle}
                         </Link>
                         <Link to={"/products/" + item._id + "/edit"}>
-                        <input type="submit" value="Edit"/>
+                        <br/><input type="submit" value="Edit"/>
                         </Link>
                         <DeleteProduct  id={item._id} afterDelete= {afterDelete} />
                     </div>
